@@ -1,0 +1,626 @@
+/* START VARIABLES */
+:root {
+    --main-padding: 50px;
+    --main-color: #bf3d42;
+}
+
+/* END VARIABLES */
+
+/* START COMPONENTS */
+.main-heading {
+    text-align: center;
+}
+
+.main-heading span {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.main-heading p {
+    font-size: 14px;
+}
+
+/* END COMPONENTS */
+
+/* START GLOBAL RULES */
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small */
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* END GLOBAL RULES */
+
+/* Toggle Icon && Nav Links */
+.header .container .header-content nav {
+    position: fixed;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+    z-index: 99999999;
+    background-color: black;
+    width: 50%;
+    border-radius: 4px;
+    border: 2px solid white;
+    overflow: hidden;
+    /* opacity: 0; */
+    transform: translateX(100%);
+    transition: .5s;
+}
+
+.header .container .header-content nav.show {
+    /* opacity: 1; */
+    transform: translateX(-50%);
+}
+
+.header .container .header-content nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .container .header-content nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: .5s;
+}
+
+.header .container .header-content nav ul li {
+    position: relative;
+}
+
+.header .container .header-content nav ul li:not(:last-of-type)::after {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 1px;
+    background-color: #bf3d42;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    border-radius: 4px;
+    transition: .5s;
+}
+
+.header .container .header-content nav ul li:hover::after {
+    background-color: white;
+}
+
+.header .container .header-content nav ul li a:hover {
+    color: #bf3d42;
+}
+
+.header .container .header-content nav ul li {
+    padding: 20px;
+}
+
+/* Toggle Icon && Nav Links */
+
+/* START HEADER-SECTION */
+.header {
+    padding-top: 15px;
+    min-height: 90vh;
+    background-image: url("../image/banner-bg.png");
+    background-size: cover;
+    position: relative;
+}
+
+.header .container .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .container .header-content i {
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.header .container .header-content i:hover {
+    color: #252525;
+}
+
+.header .container .buttone {
+    display: none;
+}
+
+.header .container .buttone button {
+    background-color: white;
+    color: var(--main-color);
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    position: relative;
+    left: 1020px;
+    cursor: pointer;
+}
+
+.header .container .buttone button:hover {
+    color: #252525;
+}
+
+/* END HEADER-SECTION */
+
+/* START LANDING-SECTION */
+.landing {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    text-align: center;
+}
+
+.landing .container .landing-content {
+    line-height: 1.5;
+}
+
+.landing .container .landing-content h3,
+.landing .container .landing-content h1,
+.landing .container .landing-content p {
+    color: white;
+}
+
+.landing .container .landing-content h3,
+.landing .container .landing-content h1 {
+    text-transform: uppercase;
+}
+
+.landing .container .landing-content h1 {
+    font-size: 50px;
+    letter-spacing: 10px;
+}
+
+.landing .container .landing-content p {
+    font-size: 14px;
+}
+
+.landing .container .landing-content .button {
+    padding-top: 20px;
+}
+
+.landing .container .landing-content a button {
+    color: white;
+    background-color: black;
+    border: solid 2px white;
+    border-radius: 20px;
+    padding: 10px 40px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-weight: bold
+}
+
+.landing .container .landing-content a button:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
+}
+
+/* END LANDING-SECTION */
+
+/* START ABOUT-SECTION */
+.about {
+    padding-top: calc(var(--main-padding) + 20px);
+    padding-bottom: var(--main-padding);
+}
+
+.about .container .about-content {
+    display: flex;
+    align-items: center;
+}
+
+.about .container .about-content .text {
+    line-height: 2;
+}
+
+.about .container .about-content .text span {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.about .container .about-content .text p {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.about .container .about-content .text .button {
+    padding-top: 20px;
+}
+
+.about .container .about-content .text .button button {
+    color: white;
+    background-color: var(--main-color);
+    padding: 15px 40px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.about .container .about-content .text .button button:hover {
+    background-color: black;
+}
+
+
+@media (max-width:991px) {
+    .about .container .about-content .image img {
+        width: 350px;
+    }
+}
+
+@media (max-width:767px) {
+    .about .container .about-content {
+        flex-direction: column;
+    }
+
+    .about .container .about-content .image img {
+        max-width: 100%;
+        padding-top: 30px;
+    }
+}
+
+/* END ABOUT-SECTION */
+
+/* START GAMES-SECTION */
+.games {
+    padding-top: var(--main-padding);
+    padding-bottom: calc(var(--main-padding) -20px);
+}
+
+.games .container .games-content .games-image {
+    padding-top: 40px;
+}
+
+.games .container .games-content .games-image {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.games .container .games-content .games-image .card img {
+    width: 265px;
+    max-width: 100%;
+}
+
+@media (max-width:767px) {
+    .games .container .games-content .games-image .card img {
+        width: 100%;
+    }
+}
+
+@media (max-width:991px) {
+    .games .container .games-content .games-image .card img {
+        width: 90%;
+    }
+}
+
+.games .container .games-content .games-image .card {
+    text-align: center;
+}
+
+.games .container .games-content .games-image .card .text {
+    position: relative;
+    bottom: 185px;
+}
+
+.games .container .games-content .games-image .card .text h2 {
+    color: white;
+    background-color: black;
+    width: fit-content;
+    margin: auto;
+    padding: 10px 10px;
+    border: solid 2px var(--main-color);
+    border-radius: 20px;
+}
+
+.games .container .games-content .games-image .card .text h3 {
+    text-transform: uppercase;
+    color: white;
+}
+
+.games .container .games-content .games-image .card .text p {
+    font-size: 12px;
+    color: white;
+    line-height: 1.5;
+}
+
+.games .container .games-content .games-image .card .button {
+    padding-top: 20px;
+}
+
+.games .container .games-content .games-image .card .button button {
+    background-color: black;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 20px;
+    border: solid 2px var(--main-color);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+    bottom: 160px;
+}
+
+.games .container .games-content .games-image .card .button button:hover {
+    background-color: var(--main-color);
+}
+
+/* END GAMES-SECTION */
+
+/* START HOW TO PLAY CASINO-SECTION */
+.howtoplay {
+    padding-top: calc(var(--main-padding) + 20px);
+    padding-bottom: var(--main-padding);
+    min-height: 80vh;
+    background-color: black;
+}
+
+.howtoplay .container .howtoplay-content .main-heading span {
+    color: white;
+}
+
+.howtoplay .container .howtoplay-content .main-heading p {
+    color: gray;
+    line-height: 1.5;
+}
+
+.howtoplay .container .howtoplay-content .images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+    padding-top: calc(var(--main-padding) + 20px);
+}
+
+@media (max-width:767px) {
+    .howtoplay .container .howtoplay-content .images {
+        justify-content: center;
+    }
+}
+
+.howtoplay .container .howtoplay-content .images .image-box img {
+    border: solid 2px white;
+    border-radius: 20px;
+    padding: 60px 100px;
+    transition: 0.5s;
+}
+
+.howtoplay .container .howtoplay-content .images .image-box img:hover {
+    border-color: var(--main-color);
+}
+
+.howtoplay .container .howtoplay-content .images .image-box p {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.howtoplay .container .howtoplay-content .button {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.howtoplay .container .howtoplay-content .button button {
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    border: solid 2px var(--main-color);
+    border-radius: 20px;
+    padding: 10px 40px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.howtoplay .container .howtoplay-content .button button:hover {
+    background-color: var(--main-color);
+}
+
+/* END HOW TO PLAY CASINO-SECTION */
+
+/* START CASINO PRICE-SECTION */
+.price {
+    padding-top: calc(var(--main-padding) + 30px);
+    padding-bottom: calc(var(--main-padding) + 30px);
+}
+
+.price .container .price-content .plan-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 50px;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.price .container .price-content .plan-box .box {
+    line-height: 1.4;
+}
+
+.price .container .price-content .plan-box .box h3 {
+    color: var(--main-color);
+}
+
+.price .container .price-content .plan-box .box span {
+    font-size: 60px;
+    color: rgb(85, 85, 85);
+}
+
+.price .container .price-content .plan-box .box span::before {
+    content: '$';
+    font-size: 25px;
+    color: var(--main-color);
+}
+
+.price .container .price-content .plan-box .box span::after {
+    content: '/Month';
+    color: rgb(85, 85, 85);
+    font-size: 20px;
+    position: relative;
+    left: 5px;
+}
+
+.price .container .price-content .plan-box .box p {
+    line-height: 1.5;
+    color: rgb(85, 85, 85);
+}
+
+.price .container .price-content .plan-box .box {
+    border: solid 2px gray;
+    border-radius: 20px;
+}
+
+.price .container .price-content .plan-box .box .button {
+    position: relative;
+    top: 20px;
+}
+
+.price .container .price-content .plan-box .box .button button {
+    color: white;
+    background-color: var(--main-color);
+    border: solid 2px var(--main-color);
+    border-radius: 20px;
+    padding: 10px 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.price .container .price-content .plan-box .box .button button:hover {
+    background-color: black;
+}
+
+/* END CASINO PRICE-SECTION */
+
+/* START FOOTER-SECTION */
+.footer {
+    min-height: 50vh;
+    background-color: #252525;
+    padding-top: var(--main-padding);
+    text-align: center;
+    line-height: 2;
+}
+
+.footer .container .footer-content form {
+    display: flex;
+    justify-content: center;
+}
+
+.footer .container .footer-content form input[type="email"] {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 70%;
+    border-bottom: solid 1px white;
+    color: white;
+    transition: 0.3s;
+    padding: 5px;
+}
+
+.footer .container .footer-content form input[type="email"]:focus {
+    border-bottom: solid 1px var(--main-color);
+}
+
+.footer .container .footer-content form .subbutton button {
+    position: relative;
+    top: 15px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 5px;
+}
+
+.footer .container .footer-content form .subbutton button:hover {
+    color: var(--main-color);
+}
+
+.footer .container .footer-content .social-icons {
+    border-bottom: solid 1px white;
+    width: 300px;
+    margin: 50px auto;
+    padding-bottom: 20px;
+}
+
+.footer .container .footer-content .social-icons i {
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 30px;
+    transition: 0.3s;
+}
+
+.footer .container .footer-content .social-icons i:hover {
+    color: var(--main-color);
+}
+
+.footer .container .footer-content p {
+    color: gray;
+    font-size: 14px;
+}
+
+.footer .container .footer-content p a {
+    color: var(--main-color);
+    transition: 0.3s;
+}
+
+.footer .container .footer-content p a:hover {
+    color: white;
+}
+
+/* END FOOTER-SECTION */
