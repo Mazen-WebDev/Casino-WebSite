@@ -11,3 +11,9 @@ uListLi.forEach((a) => {
         navBar.classList.remove("show");
     });
 });
+
+window.onscroll = function () {
+    if (scrollY >= 50) {
+        navBar.classList.remove("show");
+    }
+}
